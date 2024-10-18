@@ -45,7 +45,13 @@ using namespace godot;
 void initialize_godot_av1_types(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
-	}
+	}    
+	Dav1dPicture example_pic;
+    example_pic.p.w = 1920;
+    example_pic.p.h = 1080;
+    example_pic.p.bpc = 10;
+    example_pic.p.layout = DAV1D_PIXEL_LAYOUT_I420;
+    print_video_info(&example_pic);
 }
 
 void uninitialize_godot_av1_types(ModuleInitializationLevel p_level) {
